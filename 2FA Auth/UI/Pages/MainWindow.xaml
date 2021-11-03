@@ -1,0 +1,371 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:_2FA_Auth.UI.Controls"
+        x:Class="_2FA_Auth.UI.Pages.MainWindow"
+        Background="#FF0A0A0A"
+        mc:Ignorable="d" Title="2FA Auth" Height="1030" Width="2030" MinWidth="1200" MinHeight="700" WindowState="Normal" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="/2FA Auth;component/icon.ico">
+    <controls:SizeAdjuster>
+        <Grid Background="#FFE9E9E9">
+            <Grid x:Name="Tab_Main" Background="#FFE9E9E9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0,0,0,1" BorderBrush="#FF5E5E5E">
+                    <Grid Background="#FFC4C4C4">
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Background="#FFE03A3F">
+                            <Image Source="/2FA Auth;component/Images/ic_logo.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="2FA Auth" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,25,0" Foreground="White" FontWeight="Bold" FontSize="22" Background="#FFE03A3F" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                            <Button x:Name="Btn_AllKeys" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFD9D9D9" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_AllKeys_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="18" Height="16" Data="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z" Fill="Black"/>
+                                    <TextBlock Margin="10,0,0,0" Text="ALL KEYS" Foreground="Black"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="Btn_AddKey" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFD9D9D9" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_AddKey_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="18" Height="18" Data="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" Fill="Black"/>
+                                    <TextBlock Margin="10,0,0,0" Text="ADD KEY" Foreground="Black"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="Btn_Import" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFD9D9D9" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_Import_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="16" Height="18" Data="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" Fill="Black"/>
+                                    <TextBlock Margin="10,0,0,0" Text="IMPORT" Foreground="Black"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="Btn_Export" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFD9D9D9" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_Export_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="16" Height="18" Data="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z" Fill="Black"/>
+                                    <TextBlock Margin="10,0,0,0" Text="EXPORT" Foreground="Black"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="Btn_Security" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFD9D9D9" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_Security_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="16" Height="18" Data="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" Fill="Black"/>
+                                    <TextBlock Margin="10,0,0,0" Text="SECURITY" Foreground="Black"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="Btn_Settings" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFD9D9D9" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_Settings_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="18" Height="18" Data="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" Fill="Black"/>
+                                    <TextBlock Margin="10,0,0,0" Text="SETTINGS" Foreground="Black"/>
+                                </StackPanel>
+                            </Button>
+                            <Button x:Name="Btn_Logout" Style="{StaticResource FlatButton}" Margin="2,0,0,0" BorderThickness="0" HorizontalAlignment="Right" Background="#FFE03A3F" Padding="15,0,15,0" Foreground="White" FontWeight="Bold" FontSize="22" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches" Click="Btn_Logout_Click">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Path Stretch="Fill" Width="18" Height="18" Data="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" Fill="White"/>
+                                    <TextBlock Margin="10,0,0,0" Text="LOGOUT"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid x:Name="Tab_AllKeys">
+                        <ListView Grid.Row="1" x:Name="List_Effects" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+                    </Grid>
+                    <Grid x:Name="Tab_AddKey" Background="#FF3C3C3C" Visibility="Collapsed">
+                        <ScrollViewer>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15">
+                                <StackPanel Width="500" Margin="20">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="To add a new key select the input method"/><Run Text=":"/></TextBlock>
+                                    <Grid Margin="20">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <RadioButton x:Name="Btn_SectionQr" Grid.Column="0" BorderThickness="1" Height="136" Foreground="White" FontWeight="Bold" BorderBrush="White" Click="Btn_SectionQr_Click">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="56" Height="56" Data="M3 11h8V3H3V11zM5 5h4v4H5V5z M3 21h8v-8H3V21zM5 15h4v4H5V15z M13 3v8h8V3H13zM19 9h-4V5h4V9z M19 19H21V21H19V19Z M13 13H15V15H13V13Z M15 15H17V17H15V15Z M13 17H15V19H13V17Z M15 19H17V21H15V19Z M17 17H19V19H17V17Z M17 13H19V15H17V13Z M19 15H21V17H19V15Z" Fill="White" />
+                                                <TextBlock Grid.Row="2" Text="QR CODE" Foreground="White"/>
+                                            </Grid>
+                                        </RadioButton>
+                                        <RadioButton x:Name="Btn_SectionKey" Grid.Column="2" Height="136" Foreground="White" FontWeight="Bold" BorderBrush="White" Click="Btn_SectionKey_Click">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="56" Height="32" Data="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" Fill="White"/>
+                                                <TextBlock Grid.Row="2" Text="SECRET KEY" Foreground="White"/>
+                                            </Grid>
+                                        </RadioButton>
+                                        <RadioButton x:Name="Btn_SectionUrl" Grid.Column="4" Height="136" Foreground="White" FontWeight="Bold" BorderBrush="White" Click="Btn_SectionUrl_Click">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="78" Height="52" Data="M-0.75 200.75781V769.29102H90.636719 999.98828V667.41992H98.126953V629.9668H97.998047V340.08203h0.128906V304.87891H999.98828V200.75781H90.636719Zm720.92773 218.75586v121.5625h27.96875V498.0293c0 -1.99218 0.10417 -3.8763 0.3125 -5.65039 0.20834 -1.77409 0.52084 -3.43815 0.9375 -4.99414 0.41667 -1.55599 0.9375 -3.00392 1.5625 -4.3418 0.625 -1.33789 1.35417 -2.56576 2.1875 -3.68555 0.83334 -1.13282 1.7448 -2.125 2.73438 -2.97461 0.98958 -0.84961 2.05729 -1.55663 3.20312 -2.12304 1.14584 -0.5664 2.3698 -0.9922 3.67188 -1.27539 1.30208 -0.28321 2.68229 -0.42383 4.14062 -0.42383 1.19792 0 2.33073 0.1302 3.39844 0.39062 1.06771 0.26041 2.07031 0.65105 3.00781 1.17188 0.9375 0.49479 1.77735 1.09374 2.51954 1.79687 0.74219 0.70312 1.38672 1.51042 1.93359 2.42188 0.41667 0.67709 0.76823 1.54296 1.05469 2.59765 0.28645 1.05469 0.50781 2.29817 0.66406 3.73047 0.36458 2.86457 0.54687 8.12502 0.54687 15.78125v31.95313 8.67187h28.125v-53.28125c0 -2.95573 -0.16536 -5.73567 -0.49414 -8.33984 -0.32877 -2.60416 -0.82096 -5.03256 -1.47851 -7.28516 -0.65755 -2.2526 -1.47852 -4.32943 -2.46485 -6.23047 -0.98632 -1.90104 -2.13802 -3.6263 -3.45312 -5.17578 -1.30208 -1.54948 -2.75715 -2.90429 -4.36524 -4.0664 -1.60807 -1.16211 -3.36914 -2.13151 -5.2832 -2.90625 -1.91406 -0.77474 -3.98112 -1.35677 -6.20117 -1.74414 -2.22005 -0.38738 -4.5931 -0.58008 -7.11914 -0.58008 -2.86459 0 -5.60547 0.30599 -8.22266 0.91797 -2.61719 0.61198 -5.11068 1.52995 -7.48047 2.7539 -2.36979 1.19792 -4.67447 2.73438 -6.91406 4.60938 -2.23958 1.875 -4.41406 4.08854 -6.52344 6.64062v-46.875zm205.78125 4.92188l-41.09375 131.48437h17.26563l41.17187 -131.48437zm58.4375 0l-41.09375 131.48437h17.26563l40.91604 -130.66797v-0.8164zm17.08792 0.8164v0.81641l0.2558 -0.81641zm-768.72854 3.48047v24.84375h-13.90625v20h13.90625v37.10938c0 2.76042 0.14323 5.32162 0.42969 7.68164 0.28646 2.36003 0.71614 4.51887 1.28906 6.47851 0.57292 1.95964 1.28906 3.72005 2.14844 5.2793 0.85937 1.55924 1.86198 2.91732 3.00781 4.07617 1.15885 1.14584 2.51888 2.14843 4.07812 3.00781 1.55925 0.85938 3.31771 1.57552 5.27735 2.14844 1.95963 0.57291 4.11849 1.0026 6.47851 1.28906 2.36003 0.28646 4.92123 0.42969 7.68164 0.42969h23.98438v-20h-14.375c-2.39583 0 -4.39453 -0.17577 -5.99609 -0.52734 -1.60157 -0.35156 -2.806 -0.8789 -3.61329 -1.58203 -0.40364 -0.36458 -0.75781 -0.81054 -1.06054 -1.33789 -0.30274 -0.52734 -0.55404 -1.13607 -0.75586 -1.82618 -0.40365 -1.38021 -0.60547 -3.08593 -0.60547 -5.11718v-37.10938h28.82812v-20h-28.82812v-24.84375zm413.4375 0v24.84375h-13.90625v20h13.90625v37.10938c0 2.76042 0.14323 5.32162 0.42969 7.68164 0.28646 2.36003 0.71614 4.51887 1.28906 6.47851 0.57292 1.95964 1.28906 3.72005 2.14844 5.2793 0.85937 1.55924 1.86198 2.91732 3.00781 4.07617 1.15885 1.14584 2.51888 2.14843 4.07812 3.00781 1.55925 0.85938 3.31771 1.57552 5.27735 2.14844 1.95963 0.57291 4.11849 1.0026 6.47851 1.28906 2.36003 0.28646 4.92123 0.42969 7.68164 0.42969h23.98438v-20h-14.375c-2.39583 0 -4.39453 -0.17577 -5.99609 -0.52734 -1.60157 -0.35156 -2.806 -0.8789 -3.61329 -1.58203 -0.40364 -0.36458 -0.75781 -0.81054 -1.06054 -1.33789 -0.30274 -0.52734 -0.55404 -1.13607 -0.75586 -1.82618 -0.40365 -1.38021 -0.60547 -3.08593 -0.60547 -5.11718v-37.10938h28.82812v-20h-28.82812v-24.84375zm-484.375 22.73438c-3.77604 0 -7.34701 0.25391 -10.71289 0.76172 -3.36589 0.50781 -6.52669 1.26952 -9.48242 2.28515 -2.95573 1.01562 -5.70638 2.28516 -8.25196 3.8086 -2.54557 1.52344 -4.88606 3.30078 -7.02148 5.33203 -2.1224 2.03125 -3.97852 4.25781 -5.57031 6.67968 -1.5918 2.42188 -2.91927 5.03907 -3.98047 7.85157 -1.0612 2.8125 -1.85807 5.82031 -2.38867 9.02343 -0.5306 3.20313 -0.79493 6.60157 -0.79493 10.19532 0 3.59375 0.26433 6.99218 0.79493 10.19531 0.5306 3.20312 1.32747 6.21094 2.38867 9.02344 1.0612 2.8125 2.38867 5.42968 3.98047 7.85156 1.59179 2.42187 3.44791 4.64844 5.57031 6.67969 2.13542 2.03125 4.47591 3.8086 7.02148 5.33203 2.54558 1.52344 5.29623 2.79296 8.25196 3.80859 2.95573 1.01562 6.11653 1.77735 9.48242 2.28516 3.36588 0.50782 6.93685 0.76172 10.71289 0.76172 3.76302 0 7.32031 -0.2539 10.66992 -0.76172 3.34961 -0.50781 6.49154 -1.26954 9.42774 -2.28516 2.93619 -1.01563 5.66471 -2.28515 8.1875 -3.80859 2.52278 -1.52343 4.83984 -3.30078 6.94921 -5.33203 2.1224 -2.03125 3.97852 -4.25782 5.57032 -6.67969 1.59179 -2.42188 2.91927 -5.03906 3.98047 -7.85156 1.06119 -2.8125 1.85611 -5.82032 2.38671 -9.02344 0.5306 -3.20313 0.79688 -6.60156 0.79688 -10.19531 0 -3.59375 -0.26628 -6.99219 -0.79688 -10.19532 -0.5306 -3.20312 -1.32552 -6.21093 -2.38671 -9.02343 -1.0612 -2.8125 -2.38868 -5.42969 -3.98047 -7.85157 -1.5918 -2.42187 -3.44792 -4.64843 -5.57032 -6.67968 -2.10937 -2.03125 -4.42643 -3.80859 -6.94921 -5.33203 -2.52279 -1.52344 -5.25131 -2.79298 -8.1875 -3.8086 -2.9362 -1.01563 -6.07813 -1.77734 -9.42774 -2.28515 -3.34961 -0.50781 -6.9069 -0.76172 -10.66992 -0.76172zm201.875 0c-3.04687 0 -5.91797 0.30599 -8.61328 0.91797 -1.34766 0.30599 -2.65234 0.68945 -3.91211 1.14843 -1.25977 0.45898 -2.47461 0.99349 -3.64649 1.60547 -1.17187 0.59896 -2.3177 1.28255 -3.4375 2.05078 -1.11979 0.76823 -2.21354 1.6211 -3.28125 2.5586 -2.13541 1.875 -4.16666 4.08854 -6.09375 6.64062v-12.8125h-27.96875v120.78125h27.96875v-45.9375c1.92709 2.55207 3.95834 4.77214 6.09375 6.66016 2.13542 1.88803 4.375 3.44401 6.71875 4.66797 1.17188 0.59896 2.38672 1.12304 3.64649 1.57226 1.25977 0.44922 2.56445 0.82357 3.91211 1.12305 2.69531 0.59895 5.56641 0.89844 8.61328 0.89844 2.69531 0 5.27018 -0.26692 7.72461 -0.80078 2.45443 -0.53385 4.78841 -1.33464 7.00195 -2.40235 2.21354 -1.06771 4.30664 -2.40234 6.2793 -4.0039 1.97265 -1.60156 3.82487 -3.47005 5.55664 -5.60547 1.73177 -2.14843 3.24805 -4.44988 4.54687 -6.9043 1.29883 -2.45443 2.38021 -5.06185 3.2461 -7.82227 0.86588 -2.76042 1.51432 -5.67383 1.94726 -8.74023 0.43295 -3.06641 0.65039 -6.2858 0.65039 -9.6582 0 -3.37239 -0.21744 -6.59115 -0.65039 -9.6543 -0.43294 -3.06316 -1.08138 -5.97071 -1.94726 -8.72461 -0.86589 -2.75391 -1.94727 -5.35417 -3.2461 -7.79883 -1.29882 -2.44466 -2.8151 -4.73373 -4.54687 -6.86914 -1.73177 -2.14844 -3.58399 -4.02929 -5.55664 -5.64062 -1.97266 -1.61133 -4.06576 -2.95313 -6.2793 -4.02735 -2.21354 -1.07422 -4.54752 -1.88086 -7.00195 -2.41797 -2.45443 -0.53711 -5.0293 -0.80468 -7.72461 -0.80468zm95 0c-3.02083 0 -6.04167 0.0977 -9.0625 0.29297 -3.02083 0.19532 -6.04167 0.48828 -9.0625 0.8789 -3.02083 0.36458 -6.03515 0.82031 -9.04297 1.36719 -3.00781 0.54687 -6.00912 1.18488 -9.00391 1.91406v21.32813c2.21354 -1.19791 4.51823 -2.24609 6.91407 -3.14453 2.39583 -0.89844 4.88281 -1.64715 7.46093 -2.2461 2.57813 -0.59897 5.26042 -1.04817 8.04688 -1.34765 2.78646 -0.29948 5.67708 -0.44922 8.67187 -0.44922 3.69792 0 6.90755 0.26042 9.62891 0.78125 1.36068 0.26042 2.60026 0.58593 3.7168 0.97656 1.11653 0.39062 2.11002 0.84636 2.98242 1.36719 0.8724 0.50782 1.63672 1.09049 2.29102 1.74804 0.65429 0.65755 1.19856 1.38997 1.63476 2.19727 0.4362 0.80729 0.76237 1.68945 0.98047 2.64648 0.2181 0.95703 0.32812 1.98894 0.32812 3.09571v2.1875h-16.48437c-3.77604 0 -7.30143 0.14974 -10.57617 0.44922 -3.27474 0.29948 -6.29883 0.74869 -9.07227 1.34765 -2.77344 0.59896 -5.29622 1.34766 -7.56836 2.2461 -2.27213 0.89844 -4.29362 1.94662 -6.06445 3.14453 -1.75782 1.19792 -3.29688 2.5677 -4.61523 4.10742 -1.31837 1.53971 -2.41602 3.24935 -3.29493 5.13086 -0.8789 1.88152 -1.53906 3.93489 -1.97851 6.1582 -0.43946 2.2233 -0.65821 4.61654 -0.65821 7.18164 0 2.10937 0.17579 4.1211 0.52735 6.03516 0.35156 1.91407 0.8789 3.73047 1.58203 5.44922 0.70312 1.71875 1.58203 3.33985 2.63672 4.86328 1.05469 1.52344 2.28515 2.94921 3.6914 4.27734 1.41927 1.3151 2.94336 2.46681 4.57422 3.45313 1.63086 0.98633 3.36849 1.80729 5.21094 2.46484 1.84245 0.65755 3.78971 1.14975 5.84375 1.47852 2.05404 0.32878 4.21484 0.49414 6.48047 0.49414 3.35937 0 6.46484 -0.29949 9.31641 -0.89844 1.42578 -0.29948 2.7871 -0.67383 4.08593 -1.12305 1.29883 -0.44922 2.53516 -0.9733 3.70703 -1.57226 1.17188 -0.61198 2.31446 -1.31445 3.42774 -2.10547 1.11328 -0.79101 2.19726 -1.67058 3.25195 -2.64063 2.10938 -1.9401 4.10156 -4.23829 5.97656 -6.89453v12.96875h28.20313V491.1543c0 -3.5026 -0.2207 -6.76106 -0.66016 -9.77539 -0.43945 -3.01432 -1.09765 -5.78451 -1.97656 -8.31055 -0.87891 -2.52605 -1.97851 -4.80794 -3.29687 -6.8457 -1.31836 -2.03776 -2.85547 -3.83138 -4.61329 -5.38086 -1.74479 -1.5625 -3.76562 -2.92969 -6.06054 -4.10157 -2.29492 -1.17186 -4.86394 -2.14843 -7.70899 -2.92968 -2.84505 -0.78125 -5.96419 -1.36719 -9.35937 -1.75782 -3.39518 -0.39062 -7.06641 -0.58593 -11.01172 -0.58593zm69.92187 2.10937v53.4375c0 2.95573 0.16341 5.73569 0.49219 8.33985 0.32878 2.60417 0.82292 5.03254 1.48047 7.28515 0.65755 2.2526 1.48047 4.32942 2.4668 6.23047 0.98633 1.90104 2.13607 3.6263 3.45117 5.17578 1.32813 1.54947 2.80599 2.90431 4.43359 4.06641 1.62761 1.16211 3.40495 2.13151 5.33203 2.90625 1.92709 0.77474 4.00391 1.35482 6.23047 1.74219 2.22656 0.38737 4.60287 0.58203 7.12891 0.58203 2.83854 0 5.55339 -0.29949 8.14453 -0.89844 2.59114 -0.59896 5.05859 -1.49739 7.40234 -2.69531 2.36979 -1.22396 4.67448 -2.77994 6.91407 -4.66797 2.23958 -1.88802 4.41406 -4.10809 6.52343 -6.66016v12.65625h27.96875v-87.5h-27.96875v43.20313c0 1.99219 -0.10416 3.8763 -0.3125 5.65039 -0.20833 1.77409 -0.52083 3.43815 -0.9375 4.99414 -0.41666 1.556 -0.9375 3.00391 -1.5625 4.34179 -0.625 1.3379 -1.35416 2.56576 -2.1875 3.68555 -0.83333 1.11979 -1.74479 2.09962 -2.73437 2.93945 -0.98958 0.83984 -2.05729 1.53972 -3.20313 2.09961 -1.14583 0.5599 -2.36979 0.97982 -3.67187 1.25977 -1.30208 0.27994 -2.68229 0.41992 -4.14063 0.41992 -1.19791 0 -2.33072 -0.12369 -3.39843 -0.37109 -1.06771 -0.24739 -2.07032 -0.61849 -3.00782 -1.11328 -0.91146 -0.49479 -1.73828 -1.09376 -2.48046 -1.79688 -0.74219 -0.70313 -1.39974 -1.51041 -1.97266 -2.42187 -0.44271 -0.70312 -0.82031 -1.61459 -1.13281 -2.73438 -0.3125 -1.11979 -0.5599 -2.44791 -0.74219 -3.98437 -0.36458 -3.125 -0.54688 -8.20311 -0.54688 -15.23438 0 -2.39582 0.026 -7.16145 0.0781 -14.29687 0.0521 -7.1875 0.0781 -13.15103 0.0781 -17.89063v-8.75zm310.07813 0v30.23438h28.20312v-30.23438zm-676.875 17.89063c1.52344 0 2.95833 0.13998 4.30273 0.41992 1.3444 0.27995 2.59831 0.69986 3.76368 1.25976 1.16536 0.5599 2.24023 1.25977 3.22656 2.09961 0.98633 0.83984 1.88411 1.81967 2.6914 2.93946 0.8073 1.10677 1.51368 2.33723 2.11915 3.6914 0.60545 1.35417 1.11002 2.83204 1.51367 4.4336 0.40364 1.60157 0.70638 3.32683 0.9082 5.17578 0.20182 1.84896 0.30273 3.82162 0.30273 5.91797 0 2.09636 -0.10091 4.07161 -0.30273 5.92382 -0.20182 1.85222 -0.50456 3.58139 -0.9082 5.18946 -0.40365 1.60808 -0.90821 3.09505 -1.51367 4.45898 -0.60547 1.36393 -1.31185 2.60482 -2.11915 3.72461 -0.80729 1.10677 -1.70507 2.07617 -2.6914 2.90625 -0.98633 0.83008 -2.0612 1.52083 -3.22656 2.07422 -1.16537 0.55338 -2.41928 0.96745 -3.76368 1.24414 -1.3444 0.27669 -2.77929 0.41602 -4.30273 0.41602 -1.54948 0 -3.00781 -0.13933 -4.375 -0.41602 -1.36719 -0.27669 -2.64323 -0.69076 -3.82813 -1.24414 -1.18489 -0.55339 -2.27864 -1.24414 -3.28125 -2.07422 -1.0026 -0.83008 -1.91406 -1.79948 -2.73437 -2.90625 -0.80729 -1.11979 -1.51367 -2.36068 -2.11914 -3.72461 -0.60547 -1.36393 -1.11003 -2.8509 -1.51367 -4.45898 -0.40365 -1.60807 -0.70638 -3.33723 -0.90821 -5.18946 -0.20182 -1.85221 -0.30273 -3.82746 -0.30273 -5.92382 0 -2.09635 0.10091 -4.06901 0.30273 -5.91797 0.20183 -1.84895 0.50456 -3.57421 0.90821 -5.17578 0.40364 -1.60156 0.9082 -3.07943 1.51367 -4.4336 0.60547 -1.35417 1.31185 -2.58463 2.11914 -3.6914 0.82031 -1.11979 1.73177 -2.09962 2.73437 -2.93946 1.00261 -0.83984 2.09636 -1.53971 3.28125 -2.09961 1.1849 -0.5599 2.46094 -0.97981 3.82813 -1.25976 1.36719 -0.27994 2.82552 -0.41992 4.375 -0.41992zm191.48437 0.3125c1.4974 0 2.9043 0.13671 4.22266 0.41015 1.31836 0.27344 2.54818 0.68359 3.6875 1.23047 1.13932 0.54687 2.18815 1.23047 3.14844 2.05078 0.96029 0.82031 1.83203 1.77735 2.61328 2.8711 0.79427 1.09375 1.48828 2.31119 2.08398 3.65234 0.59571 1.34114 1.0931 2.80599 1.49024 4.39453 0.39713 1.58854 0.69401 3.30078 0.89258 5.13672 0.19856 1.83593 0.29882 3.79558 0.29882 5.87891 0 2.08334 -0.10026 4.04296 -0.29882 5.8789 -0.19857 1.83594 -0.49545 3.54818 -0.89258 5.13672 -0.39714 1.58854 -0.89453 3.05338 -1.49024 4.39453 -0.5957 1.34115 -1.28971 2.5586 -2.08398 3.65235 -0.78125 1.09375 -1.65299 2.05077 -2.61328 2.87109 -0.96029 0.82031 -2.00912 1.5039 -3.14844 2.05078 -1.13932 0.54687 -2.36914 0.95703 -3.6875 1.23047 -1.31836 0.27343 -2.72526 0.41016 -4.22266 0.41016 -1.49739 0 -2.9095 -0.13673 -4.23437 -0.41016 -1.32487 -0.27344 -2.5625 -0.6836 -3.71484 -1.23047 -1.15235 -0.54688 -2.21941 -1.23047 -3.19922 -2.05078 -0.97982 -0.82032 -1.8724 -1.77734 -2.67969 -2.87109 -0.79427 -1.10677 -1.49023 -2.33398 -2.08594 -3.68164 -0.5957 -1.34765 -1.09114 -2.81576 -1.48828 -4.4043 -0.39713 -1.58855 -0.69596 -3.29752 -0.89453 -5.12695 -0.19857 -1.82942 -0.29688 -3.77929 -0.29688 -5.84961 0 -2.07031 0.0983 -4.01954 0.29688 -5.84571 0.19857 -1.82617 0.4974 -3.52929 0.89453 -5.11132 0.39714 -1.58203 0.89258 -3.04297 1.48828 -4.38086 0.59571 -1.33789 1.29167 -2.55274 2.08594 -3.64649 0.80729 -1.10677 1.69987 -2.07617 2.67969 -2.90625 0.97981 -0.83008 2.04687 -1.52083 3.19922 -2.07422 1.15234 -0.55339 2.38997 -0.9694 3.71484 -1.24609 1.32487 -0.2767 2.73698 -0.41406 4.23437 -0.41406zm107.34375 29.92187h14.53125v3.20313c0 1.41927 -0.11328 2.77995 -0.33789 4.08203 -0.22461 1.30209 -0.56054 2.54558 -1.00976 3.73047 -0.44922 1.1849 -1.01172 2.31119 -1.68555 3.3789 -0.67383 1.06771 -1.45899 2.07683 -2.35742 3.02735 -0.89844 0.9375 -1.84896 1.75781 -2.85156 2.46093 -1.00261 0.70313 -2.0573 1.28907 -3.16407 1.75782 -1.10677 0.46875 -2.26562 0.82031 -3.47656 1.05468 -1.21094 0.23438 -2.47396 0.35157 -3.78906 0.35157 -2.10937 0 -3.99088 -0.2474 -5.64453 -0.74219 -1.65365 -0.4948 -3.07943 -1.23697 -4.27735 -2.22656 -0.58593 -0.50781 -1.09961 -1.06381 -1.53906 -1.66602 -0.43945 -0.60222 -0.80469 -1.25064 -1.09765 -1.94726 -0.58594 -1.39323 -0.87891 -2.97528 -0.87891 -4.7461 0 -0.96354 0.0911 -1.86848 0.27344 -2.71484 0.18229 -0.84635 0.45573 -1.63411 0.82031 -2.36328 0.36458 -0.72916 0.82031 -1.39974 1.36719 -2.01172 0.54687 -0.61197 1.18489 -1.16537 1.91406 -1.66016 0.74219 -0.4948 1.57487 -0.92774 2.49609 -1.29883 0.92123 -0.37109 1.93099 -0.68034 3.03125 -0.92773 2.20052 -0.49479 4.75912 -0.74219 7.67578 -0.74219zm378.04688 9.14063v30.23437h28.20312V510.8418Z" Fill="White"/>
+                                                <TextBlock Grid.Row="2" Text="FULL URL" Foreground="White"/>
+                                            </Grid>
+                                        </RadioButton>
+                                    </Grid>
+                                    <StackPanel Margin="20">
+                                        <StackPanel x:Name="Tab_QrCode" Visibility="Visible">
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Qr code"/><Run Text=":"/></TextBlock>
+                                            <Grid>
+                                                <Button x:Name="Btn_AddQrCode" Height="56" Content="Browse file..." Foreground="White" FontWeight="Bold" Margin="0,10,0,10" BorderBrush="Black" Click="Btn_AddQrCode_Click" Background="#FFE03A3F" />
+                                                <Border x:Name="Tab_QrCodeLoading" Visibility="Collapsed" Height="56" Margin="0,10,0,10" BorderBrush="Black" Background="#FFE03A3F" CornerRadius="5" BorderThickness="1">
+                                                    <Grid HorizontalAlignment="Stretch" Margin="5">
+                                                        <ProgressBar IsIndeterminate="True" BorderBrush="#FFE03A3F" Background="Black" Foreground="#FFE03A3F"/>
+                                                        <TextBlock Text="Reading QR Code..." HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="16" FontWeight="Bold"/>
+                                                    </Grid>
+                                                </Border>
+                                            </Grid>
+                                        </StackPanel>
+                                        <StackPanel x:Name="Tab_SecureKey" Visibility="Collapsed">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="10"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Label"/><Run Text=":"/></TextBlock>
+                                                    <TextBox x:Name="Tb_KeyLabel" Height="56" Background="White" Margin="0,10,0,10" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2">
+                                                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Issuer"/><Run Text=":"/></TextBlock>
+                                                    <TextBox x:Name="Tb_KeyIssuer" Height="56" Background="White" Margin="0,10,0,10" />
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Secrect Key"/><Run Text=":"/></TextBlock>
+                                            <TextBox x:Name="Tb_KeySecret" Height="56" Background="White" Margin="0,10,0,10" />
+
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Algorithm"/><Run Text=":"/></TextBlock>
+                                            <ComboBox x:Name="Cb_KeyAlgorithm" Height="56" Background="White" Margin="0,10,0,10" SelectedIndex="0">
+                                                <ComboBoxItem Content="SHA1"/>
+                                                <ComboBoxItem Content="SHA256"/>
+                                                <ComboBoxItem Content="SHA512"/>
+                                            </ComboBox>
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="10"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Digits"/><Run Text=":"/></TextBlock>
+                                                    <ComboBox x:Name="Cb_KeyDigits" Height="56" Background="White" Margin="0,10,0,10" SelectedIndex="0">
+                                                        <ComboBoxItem Content="6"/>
+                                                        <ComboBoxItem Content="8"/>
+                                                    </ComboBox>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="2">
+                                                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Period"/><Run Text=":"/></TextBlock>
+                                                    <TextBox x:Name="Tb_KeyPeriod" Height="56" Background="White" Margin="0,10,0,10" />
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <Border CornerRadius="1" Height="2" Background="White" Margin="0,15"></Border>
+                                            <Button x:Name="Btn_AddSecureKey" Height="56" Content="Add" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_AddSecureKey_Click" Background="#FFE03A3F"/>
+                                        </StackPanel>
+                                        <StackPanel x:Name="Tab_FullUrl" Visibility="Collapsed">
+                                            <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="URL"/><Run Text=":"/></TextBlock>
+                                            <TextBox x:Name="Tb_FullUrl" Height="56" Background="White" Margin="0,10,0,10" />
+                                            <Border CornerRadius="1" Height="2" Background="White" Margin="0,15"></Border>
+                                            <Button x:Name="Btn_AddUrl" Height="56" Content="Add" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_AddUrl_Click" Background="#FFE03A3F"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </ScrollViewer>
+                    </Grid>
+                    <Grid x:Name="Tab_Import" Background="#FF3C3C3C" Visibility="Collapsed">
+                        <ScrollViewer>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15">
+                                <StackPanel Width="500" Margin="20">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="White" FontSize="22" TextWrapping="Wrap" TextAlignment="Center"><Run Text="To import a new archive select the source file"/><Run Text=":"/></TextBlock>
+                                    <StackPanel Margin="20">
+                                        <Border Margin="0,0,0,20" CornerRadius="5" BorderBrush="White" BorderThickness="1" Height="136" Background="#FFE03A3F">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="34" Height="36" Data="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" Fill="White"/>
+                                                <TextBlock Grid.Row="2" Text="IMPORT" Foreground="White" FontWeight="Bold"/>
+                                            </Grid>
+                                        </Border>
+                                        <StackPanel Margin="0,20,0,0">
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"  FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="File"/><Run Text=":"/></TextBlock>
+                                            <Button x:Name="Btn_BrowseArchive" Height="56" Content="Browse..." Margin="0,10,0,10" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_BrowseArchive_Click" Background="#FF282525"/>
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,0,0" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Password"/><Run Text=":"/></TextBlock>
+                                            <PasswordBox x:Name="Tb_ArchivePassword" Height="56" Background="White" Margin="0,10,0,10" />
+                                            <Border CornerRadius="1" Height="2" Background="White" Margin="0,15"></Border>
+                                            <Button x:Name="Btn_ImportArchive" Height="56" Content="Import" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_ImportArchive_Click" Background="#FFE03A3F"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </ScrollViewer>
+                    </Grid>
+                    <Grid x:Name="Tab_Export" Background="#FF3C3C3C" Visibility="Collapsed">
+                        <ScrollViewer>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15">
+                                <StackPanel Width="500" Margin="20">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="White" FontSize="22" TextWrapping="Wrap" TextAlignment="Center"><Run Text="To export your archive click the button below"/><Run Text=":"/></TextBlock>
+                                    <StackPanel Margin="20">
+                                        <Border Margin="0,0,0,20" CornerRadius="5" BorderBrush="White" BorderThickness="1" Height="136" Background="#FFE03A3F">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="34" Height="36" Data="M5 4v2h14V4H5zm0 10h4v6h6v-6h4l-7-7-7 7z" Fill="White" />
+                                                <TextBlock Grid.Row="2" Text="EXPORT" Foreground="White" FontWeight="Bold"/>
+                                            </Grid>
+                                        </Border>
+                                        <StackPanel Margin="0,20,0,0">
+                                            <Border CornerRadius="1" Height="2" Background="White" Margin="0,15"></Border>
+                                            <Button x:Name="Btn_ExportArchive" Height="56" Content="Export" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_ExportArchive_Click" Background="#FFE03A3F"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </ScrollViewer>
+                    </Grid>
+                    <Grid x:Name="Tab_Security" Background="#FF3C3C3C" Visibility="Collapsed">
+                        <ScrollViewer>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15">
+                                <StackPanel Width="500" Margin="20">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="White" FontSize="22" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Change the access parameters to your archive"/><Run Text=":"/></TextBlock>
+                                    <StackPanel Margin="20">
+                                        <Border Margin="0,0,0,20" CornerRadius="5" BorderBrush="White" BorderThickness="1" Height="136" Background="#FFE03A3F">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="34" Height="36" Data="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" Fill="White" />
+                                                <TextBlock Grid.Row="2" Text="SECURITY" Foreground="White" FontWeight="Bold"/>
+                                            </Grid>
+                                        </Border>
+                                        <StackPanel Margin="0,20,0,0">
+                                            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top"  FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="New Password"/><Run Text=":"/></TextBlock>
+                                            <PasswordBox x:Name="Tb_NewPassword" Height="56" Background="White" Margin="0,10,0,10" />
+                                            <Border CornerRadius="1" Height="2" Background="White" Margin="0,15"></Border>
+                                            <Button x:Name="Btn_ChangePassword" Height="56" Content="Change" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_ChangePassword_Click" Background="#FFE03A3F"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </ScrollViewer>
+                    </Grid>
+                    <Grid x:Name="Tab_Settings" Background="#FF3C3C3C" Visibility="Collapsed">
+                        <ScrollViewer>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15">
+                                <StackPanel Width="500" Margin="20">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="White" FontSize="22" TextWrapping="Wrap" TextAlignment="Center"><Run Text="Change all the settings you want"/><Run Text=":"/></TextBlock>
+                                    <StackPanel Margin="20">
+                                        <Border Margin="0,0,0,20" CornerRadius="5" BorderBrush="White" BorderThickness="1" Height="136" Background="#FFE03A3F">
+                                            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="56"/>
+                                                    <RowDefinition Height="10"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Path Grid.Row="0" Stretch="Fill" Width="34" Height="36" Data="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" Fill="White" />
+                                                <TextBlock Grid.Row="2" Text="SETTINGS" Foreground="White" FontWeight="Bold"/>
+                                            </Grid>
+                                        </Border>
+                                        <StackPanel Margin="0,20,0,0">
+                                            <Grid Margin="0,10">
+                                                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="22"><Run Text="Request password to access"/><Run Text=":"/></TextBlock>
+                                                <CheckBox x:Name="Sw_RequestPassword" Foreground="White" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Right" BorderBrush="Black" Background="#FF282525"/>
+                                            </Grid>
+                                            <Border CornerRadius="1" Height="2" Background="White" Margin="0,15"></Border>
+                                            <Button x:Name="Btn_SaveSettings" Height="56" Content="Save" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_SaveSettings_Click" Background="#FFE03A3F"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+                <Border BorderThickness="0,1,0,0" Grid.Row="2" BorderBrush="#FF5E5E5E">
+                    <Grid Background="#FFC4C4C4">
+                        <TextBlock Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="14" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"><Run Text="Saved Keys: "/><Run x:Name="Tx_KeysCount" Text="0"/></TextBlock>
+                        <TextBlock Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" FontSize="14" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"><Run Text="Developed by "/><Run Foreground="#FF494949" Text="MariusBinary" TextDecorations="Underline"/><Run Foreground="Black" Text="  •  Version "/><Run Foreground="#FF494949" Text="1.0" TextDecorations="Underline"/></TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid x:Name="Tab_Login" Background="#FFE9E9E9" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0,0,0,1" BorderBrush="#FF5E5E5E">
+                    <Grid Background="#FFC4C4C4">
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Background="#FFE03A3F">
+                            <Image Source="/2FA Auth;component/Images/ic_logo.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="2FA Auth" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,25,0" Foreground="White" FontWeight="Bold" FontSize="22" Background="#FFE03A3F" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border HorizontalAlignment="Center" BorderThickness="1" VerticalAlignment="Center" CornerRadius="10" Grid.Row="1" Background="White" BorderBrush="Black">
+                    <StackPanel Width="500" Margin="20">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="#FF080808" FontSize="22"><Run Text="Enter the password to access your archive"/><Run Text=":"/></TextBlock>
+                        <PasswordBox x:Name="Tb_LoginPassword" MaxLength="16" Height="56" Background="White" Margin="0,10,0,15"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" KeyDown="Tb_LoginPassword_KeyDown"/>
+                        <Button x:Name="Btn_Login" Height="56" Content="Login" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_Login_Click"/>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,1,0,0" Grid.Row="2" BorderBrush="#FF5E5E5E">
+                    <Grid Background="#FFC4C4C4">
+                        <TextBlock Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" FontSize="14" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"><Run Text="Developed by "/><Run Foreground="#FF494949" Text="MariusBinary" TextDecorations="Underline"/><Run Foreground="Black" Text="  •  Version "/><Run Foreground="#FF494949" Text="1.0" TextDecorations="Underline"/></TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid x:Name="Tab_Create" Background="#FFE9E9E9" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="56"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0,0,0,1" BorderBrush="#FF5E5E5E">
+                    <Grid Background="#FFC4C4C4">
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Background="#FFE03A3F">
+                            <Image Source="/2FA Auth;component/Images/ic_logo.png" HorizontalAlignment="Left"/>
+                            <TextBlock Text="2FA Auth" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,25,0" Foreground="White" FontWeight="Bold" FontSize="22" Background="#FFE03A3F" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Border HorizontalAlignment="Center" BorderThickness="1" VerticalAlignment="Center" CornerRadius="10" Grid.Row="1" Background="White" BorderBrush="Black">
+                    <StackPanel Width="500" Margin="20">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,15" FontWeight="Bold" Foreground="#FF080808" FontSize="22"><Run Text="Enter the main password to create an archive"/><Run Text=":"/></TextBlock>
+                        <PasswordBox x:Name="Tb_CreatePassword" MaxLength="16" Password="" Height="56" Background="White" Margin="0,10,0,15"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" KeyDown="Tb_CreatePassword_KeyDown"/>
+                        <Button x:Name="Btn_Create" Height="56" Content="Create" Foreground="White" FontWeight="Bold" BorderBrush="Black" Click="Btn_Create_Click" Background="#FFE03A3F"/>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,1,0,0" Grid.Row="2" BorderBrush="#FF5E5E5E">
+                    <Grid Background="#FFC4C4C4">
+                        <TextBlock Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" FontSize="14" FontFamily="/2FA Auth;component/Fonts/Staatliches/#Staatliches"><Run Text="Developed by "/><Run Foreground="#FF494949" Text="MariusBinary" TextDecorations="Underline"/><Run Foreground="Black" Text="  •  Version "/><Run Foreground="#FF494949" Text="1.0" TextDecorations="Underline"/></TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </controls:SizeAdjuster>
+</Window>
